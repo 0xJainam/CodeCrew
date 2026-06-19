@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, Suspense } from "react";
 import Topbar from "@/components/editor/EditorTopbar";
 import Sidebar from "@/components/editor/sidebar";
 import CodeEditor from "@/components/editor/codeEditor";
@@ -24,7 +24,7 @@ const DEFAULT_FILES: FilesMap = {
   },
 };
 
-export default function EditorPage() {
+function EditorContent() {
   const [files, setFiles] = useState<FilesMap>(DEFAULT_FILES);
   const [selectedFile, setSelectedFile] = useState("main.ts");
   const [openTabs, setOpenTabs] = useState(["main.ts"]);
@@ -211,5 +211,13 @@ export default function EditorPage() {
         <UsersPanel users={activeUsers} currentUserId={currentUserId} />
       </div>
     </div>
+  );
+}
+
+export default function EditorPage() {
+  return (
+    <Suspense>
+      <EditorContent />
+    </Suspense>
   );
 }
