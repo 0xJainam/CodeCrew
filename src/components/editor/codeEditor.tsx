@@ -17,6 +17,10 @@ export default function CodeEditor({
 }: CodeEditorProps) {
   const currentFile = files[selectedFile];
 
+  if (!currentFile) {
+    return <div className="flex-1 min-h-0 bg-surface-0" />;
+  }
+
   return (
     <div className="flex-1 min-h-0 bg-surface-0">
       <Editor
@@ -34,13 +38,16 @@ export default function CodeEditor({
           },
         }}
         onChange={(value) =>
-          setFiles((prev) => ({
-            ...prev,
-            [selectedFile]: {
-              ...prev[selectedFile],
-              content: value || "",
-            },
-          }))
+          setFiles((prev) => {
+            if (!prev[selectedFile]) return prev;
+            return {
+              ...prev,
+              [selectedFile]: {
+                ...prev[selectedFile],
+                content: value || "",
+              },
+            };
+          })
         }
       />
     </div>

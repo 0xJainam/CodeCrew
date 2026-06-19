@@ -1,58 +1,59 @@
 @import "tailwindcss";
 
-@theme {
-  --color-accent-400: #60a5fa;
-  --color-accent-500: #3b82f6;
-  --color-accent-600: #2563eb;
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
 
-  --color-surface-0: #000000;
-  --color-surface-50: #0a0a0a;
-  --color-surface-100: #111111;
-  --color-surface-200: #1a1a1a;
-  --color-surface-300: #262626;
+  --card: #111111;
+  --border: rgba(255, 255, 255, 0.08);
 
-  --color-border-subtle: #ffffff0d;
-  --color-border-default: #ffffff1a;
-  --color-border-strong: #ffffff33;
-
-  --shadow-card: 0 8px 32px 0 #00000080;
+  --muted: #a1a1aa;
 }
 
-@layer base {
-  html {
-    color-scheme: dark;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: var(--color-surface-0);
-    color: #fafafa;
-    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
-.bg-grid {
-  background-image: radial-gradient(circle, #ffffff08 1px, transparent 1px);
-  background-size: 24px 24px;
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.monaco-editor .scrollbar .slider {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-radius: 4px !important;
+* {
+  box-sizing: border-box;
 }
 
-.monaco-editor .scrollbar .slider:hover {
-  background: rgba(255, 255, 255, 0.14) !important;
+::selection {
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.monaco-editor,
-.monaco-editor .overflow-guard {
-  border-radius: 0 !important;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.05),
+      transparent 50%
+    );
+
+  pointer-events: none;
+  z-index: -1;
 }
 
-select option {
-  background-color: #111111;
-  color: #e4e4e7;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
 }
