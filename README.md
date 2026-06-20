@@ -2,6 +2,10 @@
 
 Real-time collaborative code editor supporting multi-user editing, room-based collaboration, active user presence, and persistent multi-file workspaces.
 
+## Live Demo
+
+🌐 https://code-crew-black.vercel.app/
+
 ## Features
 
 - **Real-Time Collaboration** — Multiple users edit code simultaneously with sub-second synchronization via Socket.IO
