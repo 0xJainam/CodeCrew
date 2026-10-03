@@ -19,7 +19,7 @@ console.log("Connected");`;
             href="/"
             className="text-4xl font-semibold tracking-tight transition-opacity hover:opacity-80"
           >
-            CodeCrew
+            Muskaan
           </Link>
 
           <div className="flex gap-8 text-m text-zinc-300">
