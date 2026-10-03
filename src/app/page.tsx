@@ -27,14 +27,14 @@ console.log("Connected");`;
               href="/login"
               className="relative transition-colors hover:text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
-              Login
+              Don't Login
             </Link>
 
             <Link
               href="/register"
               className="relative transition-colors hover:text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
-              Register
+              Don't Register
             </Link>
           </div>
         </div>
